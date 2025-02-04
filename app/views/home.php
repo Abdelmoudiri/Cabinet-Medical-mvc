@@ -1,11 +1,11 @@
 <?php
 
-    session_start();
+    // session_start();
 
-    if(!isset($_SESSION['id_user']) && !isset($_SESSION['role'])){
-            header('location: ./index.php');
-            exit;
-    }
+    // if(!isset($_SESSION['id_user']) && !isset($_SESSION['role'])){
+    //         header('location: ./index.php');
+    //         exit;
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/png" href="../assets/img/logo.png">
-    <title>LexAdvisor - Home Page</title>
+    <link rel="icon" type="image/png" href="https://static.vecteezy.com/system/resources/previews/010/497/899/large_2x/group-of-female-african-medical-students-in-college-photo.jpg">
+    <title>CabinetMed - Accueil</title>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
@@ -27,8 +27,8 @@
         <nav class="py-5 px-5 md:px-10 bg-[#02101f] shadow md:flex md-items-center md:justify-between">
             <div class="flex items-center justify-between relative z-[10]">
                 <div class="flex items-center gap-2">
-                    <img class="h-10" src="../assets/img/logo.png" alt="Logo du Site LexAdvisor">
-                    <h1 class="text-2xl font-semibold">Lex<span class="text-[#01FF70]">Advisor</span></h1>
+                    <img class="h-10" src="https://static.vecteezy.com/system/resources/previews/010/497/899/large_2x/group-of-female-african-medical-students-in-college-photo.jpg" alt="Logo du Cabinet Médical">
+                    <h1 class="text-2xl font-semibold">Cabinet<span class="text-[#01FF70]">Med</span></h1>
                 </div>
                 <div class="text-4xl cursor-pointer mx-2 md:hidden flex items-center">
                     <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
@@ -43,10 +43,10 @@
                     <a href="
                         <?php
                             if(isset($_SESSION['id_user'])){
-                                if($_SESSION['role'] == 'Client'){
-                                    echo './client_dashboard.php';
+                                if($_SESSION['role'] == 'Patient'){
+                                    echo './patient_dashboard.php';
                                 }else{
-                                    echo './avocat_dashboard.php';
+                                    echo './medecin_dashboard.php';
                                 }
                             }
                         ?>
@@ -63,7 +63,7 @@
             <div class="w-full lg:w-1/2">
                 <div class="lg:max-w-lg">
                     <h1 class="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">
-                        Votre Partenaire de Confiance pour Tous vos Litiges
+                        Votre Santé, Notre Priorité
                     </h1>
 
                     <div class="mt-8 space-y-5">
@@ -72,7 +72,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
 
-                            <span class="mx-2">Expertise spécialisée</span>
+                            <span class="mx-2">Expertise médicale</span>
                         </p>
 
                         <p class="flex items-center -mx-2 text-gray-700 dark:text-gray-200">
@@ -80,7 +80,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
 
-                            <span class="mx-2">Service personnalisé</span>
+                            <span class="mx-2">Soins personnalisés</span>
                         </p>
 
                         <p class="flex items-center -mx-2 text-gray-700 dark:text-gray-200">
@@ -88,7 +88,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
 
-                            <span class="mx-2">Innovation</span>
+                            <span class="mx-2">Équipement moderne</span>
                         </p>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
             </div>
 
             <div class="flex items-center justify-center w-full h-96 lg:w-1/2">
-                <img class="object-cover w-full h-full mx-auto rounded-md lg:max-w-2xl" src="../assets/img/hero.jpg" alt="glasses photo">
+                <img class="object-cover w-full h-full mx-auto rounded-md lg:max-w-2xl" src="https://static.vecteezy.com/system/resources/previews/010/497/899/large_2x/group-of-female-african-medical-students-in-college-photo.jpg" alt="glasses photo">
             </div>
         </section>
     </header>
@@ -116,12 +116,12 @@
         <!-- ABOUT US SECTION -->
         <section class="container flex flex-col lg:gap-10 px-14 py-10 mx-auto space-y-6 lg:h-[30rem] lg:py-16 lg:flex-row lg:items-center">
             <div class="flex items-center justify-center w-full h-80 lg:w-1/2">
-                <img class="rounded-md" src="../assets/img/court.jpg" alt="Image de Tribunal">
+                <img class="rounded-md" src="https://static.vecteezy.com/system/resources/previews/010/497/899/large_2x/group-of-female-african-medical-students-in-college-photo.jpg" alt="Image du Cabinet Médical">
             </div>
             <div class="w-full lg:w-1/2">
                 <h1 class="text-gray-100 text-3xl font-semibold tracking-wide lg:text-4xl">A Propos de Nous</h1>
                 <p class="py-5 text-justify leading-6">
-                    Notre cabinet d'avocats <span class="font-semibold text-[#01FF70] text-xl">LexAdvisor</span> met à votre service expertise, rigueur et engagement pour défendre vos droits. Composé d'avocats spécialisés, nous intervenons dans divers domaines juridiques.<br>
+                    Notre cabinet médical <span class="font-semibold text-[#01FF70] text-xl">CabinetMed</span> met à votre service expertise, rigueur et engagement pour défendre vos droits. Composé de médecins spécialisés, nous intervenons dans divers domaines médicaux.<br>
                     Que vous soyez un particulier ou une entreprise, nous offrons des solutions adaptées à vos besoins, avec transparence, écoute et efficacité.
                 </p>
                 <a href="#">
@@ -137,7 +137,7 @@
         <!-- NOS VALEURS SECTION -->
         <section class="bg-[#02101f] py-10">
             <div class="container px-6 py-10 mx-auto">
-                <h1 class="text-2xl font-semibold text-center lg:text-3xl text-white">Nos Valeurs à <span class="text-[#01FF70] text-4xl">LexAdvisor</span></h1>
+                <h1 class="text-2xl font-semibold text-center lg:text-3xl text-white">Nos Valeurs à <span class="text-[#01FF70] text-4xl">CabinetMed</span></h1>
 
                 <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-3">
                     <div class="flex flex-col items-center p-6 space-y-3 text-center bg-gray-100 rounded-xl dark:bg-gray-800">
@@ -150,7 +150,7 @@
                         <h1 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">Excellence</h1>
 
                         <p class="text-gray-500 dark:text-gray-300">
-                            Offrir des solutions juridiques de haute qualité, adaptées à chaque situation.
+                            Offrir des solutions médicales de haute qualité, adaptées à chaque situation.
                         </p>
 
                         <a href="#" class="flex items-center -mx-1 text-sm text-blue-500 capitalize transition-colors duration-300 transform dark:text-blue-400 hover:underline hover:text-blue-600 dark:hover:text-blue-500">
@@ -214,7 +214,7 @@
                     <div class="py-5">
                         <details class="group">
                             <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                                <span> Quels sont les types de services juridiques que vous proposez ?</span>
+                                <span> Quels sont les types de services médicaux que vous proposez ?</span>
                                 <span class="transition group-open:rotate-180">
                                         <svg fill="none" height="24" shape-rendering="geometricPrecision"
                                             stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"
@@ -223,7 +223,7 @@
                                         </svg>
                                     </span>
                             </summary>
-                            <p class="group-open:animate-fadeIn mt-3 text-neutral-400">Nous offrons des services dans divers domaines tels que le droit civil, commercial, pénal, du travail et de la famille, ainsi que des conseils juridiques adaptés à vos besoins.
+                            <p class="group-open:animate-fadeIn mt-3 text-neutral-400">Nous offrons des services dans divers domaines tels que la médecine générale, la chirurgie, la pédiatrie, la gynécologie et des conseils médicaux adaptés à vos besoins.
                             </p>
                         </details>
                     </div>
@@ -246,7 +246,7 @@
                     <div class="py-5">
                         <details class="group">
                             <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                                <span> Comment prendre rendez-vous avec un avocat ?</span>
+                                <span> Comment prendre rendez-vous avec un médecin ?</span>
                                 <span class="transition group-open:rotate-180">
                                         <svg fill="none" height="24" shape-rendering="geometricPrecision"
                                             stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"
@@ -255,7 +255,7 @@
                                         </svg>
                                     </span>
                             </summary>
-                            <p class="group-open:animate-fadeIn mt-3 text-neutral-400">Les rendez-vous se font via notre site LexAdvisor. Après authentification, vous pourrez choisir l'avocat que vous souhaitez consulter et sélectionner une plage horaire disponible.
+                            <p class="group-open:animate-fadeIn mt-3 text-neutral-400">Les rendez-vous se font via notre site CabinetMed. Après authentification, vous pourrez choisir le médecin que vous souhaitez consulter et sélectionner une plage horaire disponible.
                             </p>
                         </details>
                     </div>
@@ -271,7 +271,7 @@
                                         </svg>
                                     </span>
                             </summary>
-                            <p class="group-open:animate-fadeIn mt-3 text-neutral-400">Lors de la première rencontre, nous analysons votre situation, répondons à vos questions et vous proposons des solutions juridiques adaptées.
+                            <p class="group-open:animate-fadeIn mt-3 text-neutral-400">Lors de la première rencontre, nous analysons votre situation, répondons à vos questions et vous proposons des solutions médicales adaptées.
                             </p>
                         </details>
                     </div>
@@ -283,7 +283,7 @@
 
     <!-- PIED DE LA PAGE -->
     <?php
-        include_once '../includes/footer.php';
+        include_once '../../public/includes/footer.php';
     ?>
 
     <script src="../assets/js/script.js"></script>
