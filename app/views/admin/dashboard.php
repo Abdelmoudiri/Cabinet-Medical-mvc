@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="col-md-3">
-        <div class="card bg-success text-white">
+        <div class="card bg-success text-white ">
             <div class="card-body">
                 <h5 class="card-title">Total Médecins</h5>
                 <h2 class="card-text"><?= $stats['total_medecins'] ?></h2>
