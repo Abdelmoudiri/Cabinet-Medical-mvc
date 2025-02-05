@@ -19,6 +19,8 @@ abstract class User
     protected $date_naissance;
     protected $role;
 
+    const ROLE = 'user'; 
+
     public function __construct()
     {
         $this->db = Database::getInstance()->getConnection();
@@ -44,6 +46,11 @@ abstract class User
 
     public function create(array $data)
     {
+        $errors = $this->validateData($data);
+        if ($errors) {
+            throw new Exception("Erreur de validation des données.");
+        }
+
         if (isset($data['password'])) {
             $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
         }
@@ -55,24 +62,11 @@ abstract class User
         $query = "INSERT INTO {$this->table} ($columns) VALUES ($placeholders)";
         $stmt = $this->db->prepare($query);
 
-        return $stmt->execute($data);
-    }
-
-    public function update(int $id, array $data)
-    {
-        if (isset($data['password']) && !empty($data['password'])) {
-            $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-        } else {
-            unset($data['password']);
+        if ($stmt->execute($data)) {
+            return true;
         }
 
-        $setClause = implode(', ', array_map(fn($key) => "$key = :$key", array_keys($data)));
-
-        $query = "UPDATE {$this->table} SET $setClause WHERE id = :id";
-        $stmt = $this->db->prepare($query);
-
-        $data['id'] = $id;
-        return $stmt->execute($data);
+        throw new Exception("Erreur lors de la création de l'utilisateur.");
     }
 
     public function findByEmail(string $email)
