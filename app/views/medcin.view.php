@@ -12,7 +12,7 @@
     <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-4 px-4 flex justify-between items-center">
             <h1 class="text-3xl font-bold text-gray-900">Bienvenue, Médecin</h1>
-            <form method="POST" action="logout.php">
+            <form method="POST" action="<?=ROOT?>/logout">
                 <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
                     Déconnexion
                 </button>

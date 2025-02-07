@@ -12,7 +12,7 @@
     <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-4 px-4 flex justify-between items-center">
             <h1 class="text-3xl font-bold text-gray-900">Bienvenue, Patient</h1>
-            <form method="POST" action="logout.php">
+            <form method="POST" action="<?=ROOT?>/logout">
                 <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
                     Déconnexion
                 </button>
@@ -66,6 +66,26 @@
         <div id="doctors-tab" class="hidden bg-white shadow rounded-lg">
             <div class="px-4 py-5">
                 <h2 class="text-lg font-semibold mb-4">Tous les Médecins</h2>
+
+                <!-- Filtre des médecins -->
+                <div class="mb-4">
+                    <form method="GET" action="filter_doctors.php" class="space-y-4">
+                        <div>
+                            <label for="speciality" class="block text-sm font-medium text-gray-700">Spécialité</label>
+                            <select id="speciality" name="speciality" class="mt-1 block w-full p-2 border rounded-md">
+                                <option value="">Tous</option>
+                                <option value="cardiologist">Cardiologue</option>
+                                <option value="dermatologist">Dermatologue</option>
+                                <option value="pediatrician">Pédiatre</option>
+                                <!-- Ajouter d'autres spécialités ici -->
+                            </select>
+                        </div>
+                        <button type="submit" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                            Filtrer
+                        </button>
+                    </form>
+                </div>
+
                 <div id="doctors-list">
                     <?php foreach ($doctors as $doctor): ?>
                         <div class="border rounded p-4">
