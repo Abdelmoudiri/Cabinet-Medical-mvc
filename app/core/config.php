@@ -9,7 +9,7 @@ if($_SERVER['SERVER_NAME'] == 'localhost')
 	define('DBPASS', '');
 	define('DBDRIVER', '');
 	
-	define('ROOT', 'http://localhost/mvc/public');
+	define('ROOT', 'http://localhost/cabinet_medical_mvc/public');
 
 }else
 {
