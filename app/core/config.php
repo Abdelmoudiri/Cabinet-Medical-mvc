@@ -2,23 +2,21 @@
 
 if($_SERVER['SERVER_NAME'] == 'localhost')
 {
-	/** database config **/
-	define('DBNAME', 'my_db');
+	define('DBNAME', 'db_medical');
 	define('DBHOST', 'localhost');
 	define('DBUSER', 'root');
 	define('DBPASS', '');
-	define('DBDRIVER', '');
+	define('DBDRIVER', 'pgsql');
 	
 	define('ROOT', 'http://localhost/cabinet_medical_mvc/public');
 
 }else
 {
-	/** database config **/
-	define('DBNAME', 'my_db');
+	define('DBNAME', 'db_medical');
 	define('DBHOST', 'localhost');
 	define('DBUSER', 'root');
 	define('DBPASS', '');
-	define('DBDRIVER', '');
+	define('DBDRIVER', 'pgsql');
 
 	define('ROOT', 'https://www.yourwebsite.com');
 

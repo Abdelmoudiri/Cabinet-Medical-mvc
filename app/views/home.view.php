@@ -196,8 +196,7 @@
                   Us</a></li>
               <li class="md:ml-6 mt-3 md:mt-0">
                 <a class="inline-block font-semibold px-4 py-2 text-white bg-blue-600 md:bg-transparent md:text-white border border-white rounded"
-                  href="book-appointment.html">Book
-                  Appointment</a>
+                  href="<?=ROOT?>/login">Login</a>
               </li>
             </ul>
           </nav>
