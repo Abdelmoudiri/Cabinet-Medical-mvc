@@ -13,6 +13,16 @@ class User
 		'password',
 	];
 
+	public function login($data)
+	{
+		
+	}
+	public function insert($data)
+	{
+		$this->query("insert into $this->table (email,password) values (:email,:password)",$data);
+
+	}
+
 	public function validate($data)
 	{
 		$this->errors = [];
@@ -30,10 +40,20 @@ class User
 		{
 			$this->errors['password'] = "Password is required";
 		}
-		
-		if(empty($data['terms']))
+		if(empty($data['confirm-password']))
 		{
-			$this->errors['terms'] = "Please accept the terms and conditions";
+			$this->errors['password'] = "Password is required";
+		}
+		else {
+			if($data['password'] != $data['confirm-password'])
+			{
+				$this->errors['password'] = "Password does not match";
+			}
+		}
+		
+		if(empty($data['name']))
+		{
+			$this->errors['terms'] = "name is required";
 		}
 
 		if(empty($this->errors))
