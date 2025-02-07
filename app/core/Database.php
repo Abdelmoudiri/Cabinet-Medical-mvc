@@ -2,11 +2,10 @@
 
 Trait Database
 {
-
 	private function connect()
 	{
-		$string = "mysql:hostname=".DBHOST.";dbname=".DBNAME;
-		$con = new PDO($string,DBUSER,DBPASS);
+		$string = DBDRIVER . ":host=" . DBHOST . ";dbname=" . DBNAME;
+		$con = new PDO($string, DBUSER, DBPASS);
 		return $con;
 	}
 
@@ -17,6 +16,7 @@ Trait Database
 		$stm = $con->prepare($query);
 
 		$check = $stm->execute($data);
+
 		if($check)
 		{
 			$result = $stm->fetchAll(PDO::FETCH_OBJ);

@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" type="image/png" sizes="32x32" href="<?=ROOT?>/assets/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="<?=ROOT?>/assets/images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?= ROOT ?>/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?= ROOT ?>/assets/images/favicon-16x16.png">
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <title>Sign Up - DentalPro</title>
 
@@ -112,7 +112,7 @@
                   Us</a></li>
               <li class="md:ml-6 mt-3 md:mt-0">
                 <a class="inline-block font-semibold px-4 py-2 text-white bg-blue-600 md:bg-transparent md:text-white border border-white rounded"
-                  href="<?=ROOT?>/login">Login</a>
+                  href="<?= ROOT ?>/login">Login</a>
               </li>
             </ul>
           </nav>
@@ -126,6 +126,12 @@
       <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 class="text-2xl font-bold mb-6 text-center">Sign Up</h2>
         <form method="post">
+          <?php if (!empty($errors)): ?>
+          <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+            <?=implode("<br>", $errors) ?>
+          </div>
+          <?php endif; ?>
+
           <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
               Full Name
@@ -165,7 +171,7 @@
           </button>
         </form>
         <p class="mt-6 text-center text-sm text-gray-600">
-          Already have an account? <a href="<?=ROOT?>/login" class="text-blue-600 hover:text-blue-800">Login</a>
+          Already have an account? <a href="<?= ROOT ?>/login" class="text-blue-600 hover:text-blue-800">Login</a>
         </p>
       </div>
     </section>

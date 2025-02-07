@@ -2,7 +2,7 @@
 
 Trait Model
 {
-	use Database;
+	// use Database;
 
 	protected $limit 		= 10;
 	protected $offset 		= 0;
@@ -20,6 +20,7 @@ Trait Model
 
 	public function where($data, $data_not = [])
 	{
+
 		$keys = array_keys($data);
 		$keys_not = array_keys($data_not);
 		$query = "select * from $this->table where ";

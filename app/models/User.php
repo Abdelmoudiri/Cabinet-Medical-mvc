@@ -19,7 +19,7 @@ class User
 	}
 	public function insert($data)
 	{
-		$this->query("insert into $this->table (email,password) values (:email,:password)",$data);
+		$this->query("insert into public.$this->table (email,password) values (:email,:password)",$data);
 
 	}
 
