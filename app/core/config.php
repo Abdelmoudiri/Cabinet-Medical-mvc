@@ -4,9 +4,9 @@ if($_SERVER['SERVER_NAME'] == 'localhost')
 {
 	define('DBNAME', 'db_medical');
 	define('DBHOST', 'localhost');
-	define('DBUSER', 'postgres');
-	define('DBPASS', 'chamus@12');
-	define('DBDRIVER', 'pgsql');
+	define('DBUSER', 'root');
+	define('DBPASS', '');
+	define('DBDRIVER', 'mysql');
 	
 	define('ROOT', 'http://localhost/cabinet_medical_mvc/public');
 

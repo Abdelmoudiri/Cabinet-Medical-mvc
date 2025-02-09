@@ -8,7 +8,7 @@ class User
 	protected $table = 'users';
 
 	protected $allowedColumns = [
-
+		'nom',
 		'email',
 		'password',
 	];
@@ -17,11 +17,7 @@ class User
 	{
 		
 	}
-	public function insert($data)
-	{
-		$this->query("insert into public.$this->table (email,password) values (:email,:password)",$data);
 
-	}
 
 	public function validate($data)
 	{

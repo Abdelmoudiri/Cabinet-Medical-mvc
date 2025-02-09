@@ -9,7 +9,6 @@ class Signup
 
 	public function index()
 	{
-		show($_POST);
 		$data = [];
 		
 		if($_SERVER['REQUEST_METHOD'] == "POST")
