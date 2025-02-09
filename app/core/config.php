@@ -2,7 +2,7 @@
 
 if($_SERVER['SERVER_NAME'] == 'localhost')
 {
-	define('DBNAME', 'db_medical');
+	define('DBNAME', 'cabinet_medical');
 	define('DBHOST', 'localhost');
 	define('DBUSER', 'root');
 	define('DBPASS', '');

@@ -14,13 +14,15 @@ class Login
 		if($_SERVER['REQUEST_METHOD'] == "POST")
 		{
 			$user = new User;
+			$data['errors'] = [];
+
+			
 			$row = $user->validate($_POST, 'login');
 			
 			if($row)
 			{
 				$_SESSION['USER'] = $row;
 				
-				// Redirection selon le rôle
 				if($row->id_role == 1) {
 					redirect('medcin');
 				} else {
