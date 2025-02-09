@@ -31,7 +31,7 @@ class App
 		}
 
 		$controller = new $this->controller;
-		show($controller);
+		// show($controller);
 		if(!empty($URL[1]))
 		{
 			if(method_exists($controller, $URL[1]))

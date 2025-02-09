@@ -124,41 +124,71 @@
     <!-- start login section -->
     <section class="bg-blue-teal-gradient min-h-screen flex items-center justify-center">
       <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+        <h2 class="text-2xl font-bold mb-6 text-center">Connexion</h2>
         <form method="post">
+          <?php if (!empty($errors)): ?>
+          <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+            <?php foreach($errors as $error): ?>
+              <p class="text-sm"><?=$error?></p>
+            <?php endforeach; ?>
+          </div>
+          <?php endif; ?>
+
           <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
-              Email Address
+              Adresse email
             </label>
             <input
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="email" type="email" name="email" placeholder="name@example.com">
+              class="shadow appearance-none border <?=isset($errors['email']) ? 'border-red-500' : ''?> rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="email"
+              type="email"
+              name="email"
+              placeholder="exemple@email.com"
+              value="<?=isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''?>"
+            >
+            <?php if(isset($errors['email'])): ?>
+              <p class="text-red-500 text-xs italic mt-1"><?=$errors['email']?></p>
+            <?php endif; ?>
           </div>
+
           <div class="mb-6">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
-              Password
+              Mot de passe
             </label>
             <input
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="password" type="password" name="password" placeholder="Password">
+              class="shadow appearance-none border <?=isset($errors['password']) ? 'border-red-500' : ''?> rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="password"
+              type="password"
+              name="password"
+              placeholder="••••••••"
+            >
+            <?php if(isset($errors['password'])): ?>
+              <p class="text-red-500 text-xs italic mt-1"><?=$errors['password']?></p>
+            <?php endif; ?>
           </div>
+
           <div class="flex items-center justify-between mb-6">
             <div class="flex items-center">
               <input type="checkbox" id="remember-me" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
               <label for="remember-me" class="ml-2 block text-sm text-gray-900">
-                Remember me
+                Se souvenir de moi
               </label>
             </div>
-            <a href="#" class="text-sm text-blue-600 hover:text-blue-800">Forgot Password?</a>
+            <a href="#" class="text-sm text-blue-600 hover:text-blue-800">Mot de passe oublié ?</a>
           </div>
+
           <button
             class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit">
-            Sign In
+            Se connecter
           </button>
         </form>
+
         <p class="mt-6 text-center text-sm text-gray-600">
-          Don't have an account? <a href="<?=ROOT?>/signup" class="text-blue-600 hover:text-blue-800">Sign up</a>
+          Vous n'avez pas de compte ? 
+          <a href="<?=ROOT?>/signup" class="text-blue-600 hover:text-blue-800">
+            Créer un compte
+          </a>
         </p>
       </div>
     </section>

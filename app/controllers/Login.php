@@ -14,25 +14,23 @@ class Login
 		if($_SERVER['REQUEST_METHOD'] == "POST")
 		{
 			$user = new User;
-			$arr['email'] = $_POST['email'];
-
-			$row = $user->first($arr);
+			$row = $user->validate($_POST, 'login');
 			
 			if($row)
 			{
-				if($row->password === $_POST['password'])
-				{
-					$_SESSION['USER'] = $row;
-					redirect('home');
+				$_SESSION['USER'] = $row;
+				
+				// Redirection selon le rôle
+				if($row->id_role == 1) {
+					redirect('medcin');
+				} else {
+					redirect('patient');
 				}
 			}
-
-			$user->errors['email'] = "Wrong email or password";
 
 			$data['errors'] = $user->errors;
 		}
 
-		$this->view('login',$data);
+		$this->view('login', $data);
 	}
-
 }

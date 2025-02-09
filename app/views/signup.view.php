@@ -133,41 +133,66 @@
           <?php endif; ?>
 
           <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
-              Full Name
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="nom">
+              Nom
             </label>
             <input
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="name" type="text" name="nom" placeholder="John Doe">
+              id="nom" type="text" name="nom" placeholder="Dupont">
           </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="prenom">
+              Prénom
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="prenom" type="text" name="prenom" placeholder="Jean">
+          </div>
+
           <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
-              Email Address
+              Email
             </label>
             <input
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="email" type="email" name="email" placeholder="name@example.com">
+              id="email" type="email" name="email" placeholder="jean.dupont@example.com">
           </div>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="role">
+              Rôle
+            </label>
+            <select
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="role" name="role">
+              <option value="patient">Patient</option>
+              <option value="medcin">Médecin</option>
+            </select>
+          </div>
+
           <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
-              Password
+              Mot de passe
             </label>
             <input
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="password" type="password" name="password" placeholder="Password">
+              id="password" type="password" name="password" placeholder="••••••••">
           </div>
+
           <div class="mb-6">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="confirm-password">
-              Confirm Password
+              Confirmer le mot de passe
             </label>
             <input
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="confirm-password" type="password" name="confirm-password" placeholder="Confirm Password">
+              id="confirm-password" type="password" name="confirm-password" placeholder="••••••••">
           </div>
+
           <button
             class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit">
-            Sign Up
+            S'inscrire
           </button>
         </form>
         <p class="mt-6 text-center text-sm text-gray-600">
